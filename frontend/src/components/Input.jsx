@@ -1,6 +1,5 @@
-const Input =({...props}) => {
-    return <input {...props}
-    className="input-field"/>
+const Input = ({...props}) => {
+    return <input {...props} className="input-field" />
 }
 
 export default Input

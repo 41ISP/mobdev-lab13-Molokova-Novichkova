@@ -1,10 +1,12 @@
-import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-const AuthGuard = ({children}) => {
+import { useUserStore } from "../store/store"
+import { useEffect } from "react"
+
+const AuthGuard = ({ children }) => {
     const navigate = useNavigate()
+    const {jwt} = useUserStore()
     useEffect(() => {
-        const isLoggedIn = false
-        if (!isLoggedIn) navigate("/signin")
+        if (!jwt) navigate("/signin")
     }, [])
     return children
 }
